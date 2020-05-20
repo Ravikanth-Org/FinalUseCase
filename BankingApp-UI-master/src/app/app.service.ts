@@ -15,7 +15,7 @@ export class AppService {
   }
 
   public getUsers() {
-    this.client.get('http://localhost:3000/api/users')
+    this.client.get('https://edcl9.sse.codesandbox.io/api/users')
       .subscribe((response) => {
 
         console.log(response);
@@ -24,7 +24,7 @@ export class AppService {
 
   public login(loginData) {
 
-    this.client.post('http://localhost:3000/api/user/login', loginData)
+    this.client.post('https://edcl9.sse.codesandbox.io/api/user/login', loginData)
       .subscribe((response) => {
         this.userName=response["user"]["username"]
         console.log(response);
@@ -32,7 +32,7 @@ export class AppService {
   }
   ///api/user/:userId
   public getUserDetails(userId,callBackFunction){
-    this.client.get(`http://localhost:3000/api/user/${userId}`)
+    this.client.get(`https://edcl9.sse.codesandbox.io/api/user/${userId}`)
     .subscribe((response) => {
       console.log(response);
       this.setUserData.next(response[0]);
